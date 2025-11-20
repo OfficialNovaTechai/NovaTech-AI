@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects - NovaTech.AI</title>
+  <meta name="description" content="Explore NovaTech.AI's AI systems, automation projects, robotics solutions, and next-generation smart innovations." />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #f5f9ff;
+      color: #0a2540;
+      margin: 0;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* ✨ EYE-CATCHY PROJECT CARDS */
+    .project-card {
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      padding: 2.2rem;
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      position: relative;
+      overflow: hidden;
+      transition: all .45s ease;
+      box-shadow: 0 0 0 rgba(0, 150, 255, 0.0);
+    }
+
+    /* Top glowing gradient strip */
+    .project-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 100%;
+      background: linear-gradient(90deg, #00bfff, #1e90ff, #00bfff);
+      opacity: 0.4;
+      filter: blur(2px);
+      transition: 0.4s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-12px) scale(1.03);
+      border-color: rgba(0, 180, 255, 0.6);
+      box-shadow: 0 18px 50px rgba(0, 180, 255, 0.28);
+    }
+
+    .project-card:hover::before {
+      opacity: 1;
+    }
+
+    /* Emoji glow animation */
+    .emoji {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+      color: #00c8ff;
+      filter: drop-shadow(0 0 12px rgba(0, 200, 255, 0.7));
+      transition: 0.4s ease;
+    }
+
+    .project-card:hover .emoji {
+      transform: scale(1.20) rotate(8deg);
+      filter: drop-shadow(0 0 18px rgba(0, 200, 255, 1));
+    }
+
+    .project-title {
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: #0a2540;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.5px;
+    }
+
+    .project-desc {
+      color: #123455;
+      font-size: 1rem;
+      opacity: 0.9;
+      line-height: 1.55;
+    }
+
+    /* AI NETWORK CANVAS */
+    #network-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -10;
+      background: transparent;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ✨ AI NETWORK BACKGROUND -->
+  <canvas id="network-canvas"></canvas>
+
+  <!-- HEADER -->
+  <header class="bg-gradient-to-r from-blue-900 to-blue-600 text-white py-6 relative z-10">
+    <nav class="container mx-auto px-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold">NovaTech.AI</a>
+      <ul class="flex gap-6">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html" class="font-bold underline">Projects</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container mx-auto px-4 py-16 relative z-10">
+
+    <section class="text-center mb-12">
+      <h1 class="text-4xl font-bold mb-4">Our Projects</h1>
+      <p class="text-lg max-w-3xl mx-auto">
+        A showcase of our intelligent systems, automation products and AI-driven innovation.
+      </p>
+    </section>
+
+    <!-- PROJECT GRID -->
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+      <div class="project-card text-center">
+        <div class="emoji">📷</div>
+        <h2 class="project-title">Machine ID Scanner (OCR)</h2>
+        <p class="project-desc">Python OCR scanner with auto folder creation and cloud sync.</p>
+      </div>
+
+      <div class="project-card text-center">
+        <div class="emoji">🛡️</div>
+        <h2 class="project-title">RakshaAI – Women Safety App</h2>
+        <p class="project-desc">Voice-trigger SOS, stealth mode, live tracking & emergency tools.</p>
+      </div>
+
+      <div class="project-card text-center">
+        <div class="emoji">👁️‍🗨️</div>
+        <h2 class="project-title">AI Vision Inspection System</h2>
+        <p class="project-desc">Industrial AI vision for defect detection & quality automation.</p>
+      </div>
+
+      <div class="project-card text-center">
+        <div class="emoji">🧾</div>
+        <h2 class="project-title">Smart Billing System</h2>
+        <p class="project-desc">POS system with table management, GST panel & thermal printing.</p>
+      </div>
+
+      <div class="project-card text-center">
+        <div class="emoji">💬</div>
+        <h2 class="project-title">AI Customer Chatbot</h2>
+        <p class="project-desc">24/7 NLP chatbot for intelligent customer engagement.</p>
+      </div>
+
+      <div class="project-card text-center">
+        <div class="emoji">🚗</div>
+        <h2 class="project-title">Quality Inspection App</h2>
+        <p class="project-desc">Vehicle data-plate OCR, invoice matching & inspection workflow automation.</p>
+      </div>
+
+      <div class="project-card text-center">
+        <div class="emoji">🌐</div>
+        <h2 class="project-title">NovaTech Website</h2>
+        <p class="project-desc">Modern React + Tailwind website with animations & powerful UI.</p>
+      </div>
+
+      <div class="project-card text-center">
+        <div class="emoji">🤖</div>
+        <h2 class="project-title">Rosie – Smart Hybrid Assistant</h2>
+        <p class="project-desc">Voice automation, smart workflows, AI-powered OS system.</p>
+      </div>
+
+      <div class="project-card text-center">
+        <div class="emoji">🔗</div>
+        <h2 class="project-title">FarmerChain – Blockchain</h2>
+        <p class="project-desc">Crop traceability, supply chain verification & trusted blockchain records.</p>
+      </div>
+
+    </section>
+
+    <div class="text-center mt-14">
+      <a href="contact.html" class="bg-blue-600 text-white px-8 py-3 rounded-full shadow-lg hover:bg-blue-700 transition">
+        Collaborate With Us
+      </a>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-blue-900 text-white py-8 text-center mt-10">
+    <p>© 2025 NovaTech.AI • Empowering Intelligence</p>
+  </footer>
+
+  <!-- ✨ AI NETWORK BACKGROUND SCRIPT -->
+  <script>
+const canvas = document.getElementById("network-canvas");
+const ctx = canvas.getContext("2d");
+
+let nodes = [];
+const NODE_COUNT = 75;
+const MAX_DISTANCE = 150;
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener("resize", resize);
+
+class Node {
+  constructor() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.vx = (Math.random() - 0.5) * 0.4;
+    this.vy = (Math.random() - 0.5) * 0.4;
+    this.size = 2.8;
+  }
+
+  update() {
+    this.x += this.vx;
+    this.y += this.vy;
+    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+  }
+
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(0,180,255,0.9)";
+    ctx.shadowBlur = 15;
+    ctx.shadowColor = "#00bfff";
+    ctx.fill();
+    ctx.shadowBlur = 0;
+  }
+}
+
+function createNodes() {
+  nodes = [];
+  for (let i = 0; i < NODE_COUNT; i++) {
+    nodes.push(new Node());
+  }
+}
+createNodes();
+
+function drawEdges() {
+  for (let i = 0; i < nodes.length; i++) {
+    for (let j = i + 1; j < nodes.length; j++) {
+      const dx = nodes[i].x - nodes[j].x;
+      const dy = nodes[i].y - nodes[j].y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+
+      if (dist < MAX_DISTANCE) {
+        ctx.beginPath();
+        ctx.strokeStyle = `rgba(0,180,255,${1 - dist / MAX_DISTANCE})`;
+        ctx.lineWidth = 1;
+        ctx.moveTo(nodes[i].x, nodes[i].y);
+        ctx.lineTo(nodes[j].x, nodes[j].y);
+        ctx.stroke();
+      }
+    }
+  }
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  nodes.forEach((n) => { n.update(); n.draw(); });
+  drawEdges();
+  requestAnimationFrame(animate);
+}
+animate();
+  </script>
+
+</body>
+</html>

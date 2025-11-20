@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us - NovaTech.AI</title>
+  <meta
+    name="description"
+    content="Discover NovaTech.AI — a next-generation intelligence company shaping the future of AI, automation, and robotics for businesses worldwide."
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f9ff;
+      color: #0a2540;
+      line-height: 1.6;
+      margin: 0;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+    }
+    .section-bg {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 2;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #1e90ff, #00bfff);
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(30, 144, 255, 0.6);
+      position: relative;
+      z-index: 2;
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #00bfff, #1e90ff);
+      box-shadow: 0 6px 20px rgba(0, 191, 255, 0.8);
+      outline: none;
+    }
+    nav a:hover,
+    nav a:focus {
+      background: rgba(30, 144, 255, 0.1);
+      border-radius: 5px;
+    }
+    #bg-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
+      pointer-events: none;
+      display: block;
+    }
+
+    /* Mobile-first responsive fixes */
+    @media (max-width: 640px) {
+      nav ul {
+        flex-direction: column;
+        gap: 0.75rem;
+        font-size: 0.95rem;
+      }
+      nav .container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-section {
+        flex-direction: column !important;
+        padding: 1.5rem !important;
+      }
+      .hero-section > div {
+        width: 100% !important;
+        text-align: center;
+      }
+      .hero-section h1 {
+        font-size: 2.25rem !important;
+      }
+      .hero-section p {
+        font-size: 1rem;
+      }
+      .lottie-container {
+        width: 220px !important;
+        height: 220px !important;
+        margin: 1.5rem auto 0;
+      }
+      .values-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+      }
+      .value-card {
+        padding: 1rem !important;
+      }
+      .value-card h3 {
+        font-size: 1.125rem;
+      }
+      .cta-section h3 {
+        font-size: 1.5rem;
+      }
+      .cta-section p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (min-width: 641px) and (max-width: 768px) {
+      .hero-section h1 {
+        font-size: 2.75rem;
+      }
+      .lottie-container {
+        width: 280px !important;
+        height: 280px !important;
+      }
+      .values-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .lottie-container {
+        width: 340px;
+        height: 340px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+
+  <header class="bg-gradient-to-r from-blue-900 to-blue-600 text-white py-4 md:py-6 relative z-2 shadow-lg">
+    <nav class="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <a href="index.html" class="text-xl sm:text-2xl font-bold tracking-wide">NovaTech.AI</a>
+      <ul class="flex flex-wrap justify-center gap-3 sm:gap-6 text-sm sm:text-base">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="font-bold underline underline-offset-4">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container mx-auto px-4 py-8 md:py-16 relative z-2">
+    <!-- Hero-style About Section -->
+    <section class="hero-section section-bg flex flex-col md:flex-row items-center justify-between p-6 md:p-10 mb-8 md:mb-12">
+      <div class="md:w-1/2 mb-8 md:mb-0 text-center md:text-left">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight">
+          NextGen Intelligence
+        </h1>
+        <p class="mb-4 md:mb-6 text-base md:text-lg text-gray-700">
+         At <span class="text-blue-600 font-semibold">NovaTech.AI</span>, we harness the power of AI, Automation, and Robotics to engineer intelligent systems that revolutionize industries and inspire the future of innovation.
+        </p>
+        <p class="text-base md:text-lg text-gray-700">
+          “From smart automation to predictive intelligence, we craft scalable systems that connect imagination with engineering precision. Our approach integrates ethical AI, automation, and innovation to deliver meaningful transformation.”
+        </p>
+      </div>
+      <div class="md:w-1/2 flex justify-center">
+        <div class="lottie-container">
+          <dotlottie-wc 
+            src="https://lottie.host/5d084057-ec19-478f-884f-269cefc019b4/AvuvVYQbAo.lottie"
+            style="width: 100%; height: 100%"
+            autoplay loop>
+          </dotlottie-wc>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Core Values -->
+    <section class="section-bg p-6 md:p-10 mb-8 md:mb-12 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Our Core Values</h2>
+      <p class="max-w-3xl mx-auto text-base md:text-lg mb-6 md:mb-8 text-gray-700">
+       Built on the pillars of innovation, integrity, collaboration, and excellence — <span class="text-blue-600 font-semibold">NovaTech.AI</span> drives the intelligent transformation of industries and inspires the next generation of technology.
+      </p>
+
+      <div class="values-grid grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div class="value-card bg-white bg-opacity-60 p-5 md:p-6 rounded-xl shadow hover:shadow-lg transition-all duration-300">
+          <h3 class="font-bold text-lg md:text-xl mb-2 flex items-center">🚀&nbsp;Innovation</h3>
+          <p>
+           We continuously push the boundaries of possibility — creating <span class="text-blue-600 font-semibold">intelligent</span>, <span class="text-blue-600 font-semibold">adaptive</span> technologies that shape the next era of <span class="text-blue-600 font-semibold">AI</span> and <span class="text-blue-600 font-semibold">automation</span>.
+          </p>
+        </div>
+
+        <div class="value-card bg-white bg-opacity-60 p-5 md:p-6 rounded-xl shadow hover:shadow-lg transition-all duration-300">
+          <h3 class="font-bold text-lg md:text-xl mb-2 flex items-center">🤝&nbsp;Integrity</h3>
+          <p>
+            We stand for <span class="text-blue-600 font-semibold">transparency</span>, <span class="text-blue-600 font-semibold">ethics</span>, and <span class="text-blue-600 font-semibold">trust</span> — ensuring every innovation we create empowers <span class="text-blue-600 font-semibold">humanity</span> responsibly and securely.
+          </p>
+        </div>
+
+        <div class="value-card bg-white bg-opacity-60 p-5 md:p-6 rounded-xl shadow hover:shadow-lg transition-all duration-300">
+          <h3 class="font-bold text-lg md:text-xl mb-2 flex items-center">💡&nbsp;Collaboration</h3>
+          <p>
+            We believe in the power of partnership — uniting diverse minds to co-create <span class="text-blue-600 font-semibold">breakthrough</span> solutions that accelerate progress and deliver <span class="text-blue-600 font-semibold">impact</span>.
+          </p>
+        </div>
+
+        <div class="value-card bg-white bg-opacity-60 p-5 md:p-6 rounded-xl shadow hover:shadow-lg transition-all duration-300">
+          <h3 class="font-bold text-lg md:text-xl mb-2 flex items-center">🏆&nbsp;Excellence</h3>
+          <p>
+            We are driven by <span class="text-blue-600 font-semibold">precision</span> and <span class="text-blue-600 font-semibold">perfection</span> — transforming every concept into world-class innovation through disciplined <span class="text-blue-600 font-semibold">excellence</span>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section text-center py-8">
+      <h3 class="text-xl md:text-2xl font-semibold mb-3 md:mb-4">Join the Intelligence Revolution</h3>
+      <p class="text-gray-700 mb-4 md:mb-6 max-w-xl mx-auto text-sm md:text-base">
+        Let’s collaborate to build the next wave of intelligent technology and automation systems.
+      </p>
+      <a href="contact.html" class="btn-primary">Contact Us</a>
+    </section>
+  </main>
+
+  <footer class="bg-blue-900 text-white py-6 md:py-8 relative z-2">
+    <div class="container mx-auto px-4 text-center text-sm md:text-base">
+      <div class="mb-3 md:mb-4 flex flex-wrap justify-center gap-3 md:gap-4">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="about.html" class="hover:underline">About</a>
+        <a href="services.html" class="hover:underline">Services</a>
+        <a href="projects.html" class="hover:underline">Projects</a>
+        <a href="team.html" class="hover:underline">Team</a>
+        <a href="contact.html" class="hover:underline">Contact</a>
+      </div>
+      <p>© 2024 NovaTech.AI. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Lottie Animation Script -->
+  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
+
+  <!-- Three.js Background Animation -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+  <script>
+    (() => {
+      const canvas = document.getElementById('bg-canvas');
+      const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+      const updateRendererSize = () => {
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      };
+      updateRendererSize();
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+      camera.position.z = 50;
+
+      const particlesCount = 600;
+      const geometry = new THREE.BufferGeometry();
+      const positions = new Float32Array(particlesCount * 3);
+
+      for (let i = 0; i < particlesCount; i++) {
+        positions[i * 3] = (Math.random() - 0.5) * 200;
+        positions[i * 3 + 1] = (Math.random() - 0.5) * 200;
+        positions[i * 3 + 2] = (Math.random() - 0.5) * 200;
+      }
+
+      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      const material = new THREE.PointsMaterial({
+        color: 0x1e90ff,
+        size: 1.3,
+        transparent: true,
+        opacity: 0.75,
+      });
+
+      const particles = new THREE.Points(geometry, material);
+      scene.add(particles);
+
+      function animate() {
+        requestAnimationFrame(animate);
+        particles.rotation.x += 0.0005;
+        particles.rotation.y += 0.001;
+        renderer.render(scene, camera);
+      }
+      animate();
+
+      window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        updateRendererSize();
+      });
+    })();
+  </script>
+</body>
+</html>

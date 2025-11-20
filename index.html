@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaTech.AI - Innovating with AI</title>
+    <meta name="description" content="Professional AI solutions company offering custom AI, machine learning, automation, and consulting services.">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lottie Web Component -->
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
+
+    <style>
+        :root {
+            --cube-size: 200px;
+            --cube-half: 100px;
+            --primary: #1e90ff;
+            --secondary: #00bfff;
+            --accent: #007acc;
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --cube-size: 150px;
+                --cube-half: 75px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --cube-size: 130px;
+                --cube-half: 65px;
+            }
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f9ff 0%, #e6f3ff 100%);
+            color: #0a2540;
+            line-height: 1.6;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #0a2540 0%, #1e90ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-bg {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.4s ease;
+            box-shadow: 0 6px 20px rgba(30, 144, 255, 0.5);
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.6s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            box-shadow: 0 10px 25px rgba(0, 191, 255, 0.7);
+            transform: translateY(-2px);
+        }
+
+        /* 3D CUBE */
+        .cube-wrapper {
+            perspective: 1200px;
+            width: var(--cube-size);
+            height: var(--cube-size);
+            margin: 0 auto;
+        }
+
+        .ai-3d-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate3d 18s infinite linear;
+            will-change: transform;
+            transform: translateZ(calc(-1 * var(--cube-half)));
+        }
+
+        .ai-3d-box:hover .ai-3d-container {
+            animation-play-state: paused;
+        }
+
+        @keyframes rotate3d {
+            from {
+                transform: translateZ(calc(-1 * var(--cube-half))) rotateX(0deg) rotateY(0deg);
+            }
+            to {
+                transform: translateZ(calc(-1 * var(--cube-half))) rotateX(360deg) rotateY(360deg);
+            }
+        }
+
+        .ai-3d-face {
+            position: absolute;
+            width: var(--cube-size);
+            height: var(--cube-size);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: white;
+            text-shadow: 0 0 15px rgba(30, 144, 255, 0.8);
+            box-shadow: 0 0 30px rgba(30, 144, 255, 0.6);
+            backface-visibility: hidden;
+        }
+
+        .ai-front  { transform: translateZ(var(--cube-half)); }
+        .ai-back   { transform: rotateY(180deg) translateZ(var(--cube-half)); }
+        .ai-top    { transform: rotateX(90deg) translateZ(var(--cube-half)); background: linear-gradient(135deg, var(--secondary), var(--primary)); }
+        .ai-bottom { transform: rotateX(-90deg) translateZ(var(--cube-half)); background: linear-gradient(135deg, var(--primary), var(--secondary)); }
+        .ai-left   { transform: rotateY(-90deg) translateZ(var(--cube-half)); background: linear-gradient(135deg, var(--accent), var(--primary)); }
+        .ai-right  { transform: rotateY(90deg) translateZ(var(--cube-half)); background: linear-gradient(135deg, var(--primary), var(--accent)); }
+
+        /* LOTTIE (Mobile) */
+        .lottie-wrapper {
+            width: 260px;
+            height: 260px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .cube-wrapper { display: none; }
+            .lottie-wrapper { display: block; }
+        }
+
+        @media (min-width: 769px) {
+            .lottie-wrapper { display: none; }
+        }
+
+        @media (max-width: 480px) {
+            .lottie-wrapper {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .ai-3d-container { animation: none; }
+            dotlottie-wc { animation: none !important; }
+        }
+
+        nav a {
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s;
+        }
+        nav a:hover::after,
+        nav a:focus::after {
+            width: 100%;
+        }
+
+        #mobileNav a {
+            display: block;
+            padding: 0.5rem 0;
+            font-weight: 500;
+        }
+
+        @media (max-width: 640px) {
+            .hero-content h1 {
+                font-size: 2.5rem !important;
+            }
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            .btn-primary {
+                padding: 0.65rem 1.5rem;
+                font-size: 1rem;
+            }
+            .section-bg {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (min-width: 641px) and (max-width: 768px) {
+            .lottie-wrapper {
+                width: 220px;
+                height: 220px;
+            }
+        }
+
+        /* FIXED CUBE OVERLAP */
+        @media (min-width: 769px) {
+            header {
+                padding-bottom: 260px; /* ⭐ cube space fix */
+            }
+
+            .nav-links {
+                display: flex;
+                align-items: center;
+                gap: 1.5rem;
+                position: relative;
+            }
+            .services-projects-group {
+                display: flex;
+                align-items: center;
+                gap: 2.9rem;
+                position: relative;
+            }
+            .cube-under-sp {
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                margin-top: 2.9rem;
+                width: var(--cube-size);
+                z-index: 10;
+                pointer-events: none; /* ⭐ prevents blocking menu */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hero-bg text-white py-6 md:py-8">
+    <nav class="container mx-auto px-4">
+        <div class="flex justify-between items-center">
+            <a href="index.html" class="text-xl sm:text-2xl font-bold tracking-tight">NovaTech.AI</a>
+
+            <ul class="nav-links hidden md:flex">
+                <li><a href="index.html" class="hover:animate-pulse">Home</a></li>
+                <li><a href="about.html" class="hover:animate-pulse">About Us</a></li>
+
+                <div class="services-projects-group">
+                    <li><a href="services.html" class="hover:animate-pulse">Services</a></li>
+                    <li><a href="projects.html" class="hover:animate-pulse">Projects</a></li>
+
+                    <div class="cube-under-sp">
+                        <div class="cube-wrapper ai-3d-box">
+                            <div class="ai-3d-container">
+                                <div class="ai-3d-face ai-front">AI</div>
+                                <div class="ai-3d-face ai-back">AI</div>
+                                <div class="ai-3d-face ai-top">AI</div>
+                                <div class="ai-3d-face ai-bottom">AI</div>
+                                <div class="ai-3d-face ai-left">AI</div>
+                                <div class="ai-3d-face ai-right">AI</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <li><a href="team.html" class="hover:animate-pulse">Team</a></li>
+                <li><a href="contact.html" class="hover:animate-pulse">Contact</a></li>
+            </ul>
+
+            <button id="menuBtn" class="md:hidden text-3xl focus:outline-none">Menu</button>
+        </div>
+    </nav>
+
+    <div id="mobileNav" class="hidden md:hidden mt-4 bg-gradient-to-b from-blue-900 to-blue-800 py-4 px-6 rounded-b-xl shadow-lg w-full">
+        <a href="index.html" class="block py-2 text-white hover:text-[#00bfff] transition">Home</a>
+        <a href="about.html" class="block py-2 text-white hover:text-[#00bfff] transition">About Us</a>
+        <a href="services.html" class="block py-2 text-white hover:text-[#00bfff] transition">Services</a>
+        <a href="projects.html" class="block py-2 text-white hover:text-[#00bfff] transition">Projects</a>
+        <a href="team.html" class="block py-2 text-white hover:text-[#00bfff] transition">Team</a>
+        <a href="contact.html" class="block py-2 text-white hover:text-[#00bfff] transition">Contact</a>
+    </div>
+
+    <section class="container mx-auto px-4 py-12 md:py-16 flex flex-col items-center justify-center gap-8 md:gap-12">
+        <div class="hero-content text-center max-w-2xl">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-black leading-tight">
+                NovaTech<span class="text-[#00bfff]">.</span>
+                <span class="inline-block bg-gradient-to-r from-white to-[#a0d8ff] bg-clip-text text-transparent">AI</span>
+            </h1>
+            <p class="text-lg sm:text-xl mt-4 opacity-90">Innovating the Future with Artificial Intelligence</p>
+            <a href="contact.html" class="btn-primary mt-6 md:mt-8">Get in Touch</a>
+        </div>
+
+        <div class="w-full flex justify-center md:hidden">
+            <div class="lottie-wrapper">
+                <dotlottie-wc
+                    src="https://lottie.host/5d084057-ec19-478f-884f-269cefc019b4/AvuvVYQbAo.lottie"
+                    autoplay
+                    loop
+                    aria-label="AI animation"
+                    style="width:100%;height:100%;"
+                    loading="lazy">
+                </dotlottie-wc>
+            </div>
+        </div>
+    </section>
+</header>
+
+<!-- MAIN -->
+<main class="py-12 md:py-16">
+    <section class="container mx-auto px-4 section-bg rounded-xl">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6">Welcome to NovaTech.AI</h2>
+        <p class="text-center text-base sm:text-lg leading-relaxed max-w-3xl mx-auto mb-8">
+            At NovaTech.AI, we harness the power of artificial intelligence to solve complex challenges and help businesses innovate.
+        </p>
+        <div class="text-center">
+            <a href="about.html" class="btn-primary text-base sm:text-lg px-6 sm:px-8 py-2.5 sm:py-3">Learn More About Us</a>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="hero-bg text-white py-8 md:py-10 mt-16">
+    <div class="container mx-auto px-4 text-center text-sm md:text-base">
+        <div class="mb-4 md:mb-6 flex flex-wrap justify-center gap-3 md:gap-6">
+            <a href="index.html" class="hover:underline">Home</a>
+            <a href="about.html" class="hover:underline">About</a>
+            <a href="services.html" class="hover:underline">Services</a>
+            <a href="projects.html" class="hover:underline">Projects</a>
+            <a href="team.html" class="hover:underline">Team</a>
+            <a href="contact.html" class="hover:underline">Contact</a>
+        </div>
+        <p class="opacity-80">
+            © 2024 NovaTech.AI. All rights reserved.<br class="sm:hidden">
+            <span class="hidden sm:inline"> • </span>Powered by AI for a smarter future.
+        </p>
+    </div>
+</footer>
+
+<script>
+    document.getElementById("menuBtn").addEventListener("click", function() {
+        document.getElementById("mobileNav").classList.toggle("hidden");
+    });
+</script>
+
+</body>
+</html>

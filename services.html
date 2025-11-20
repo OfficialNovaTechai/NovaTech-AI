@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services - NovaTech.AI</title>
+  <meta name="description" content="NovaTech.AI offers AI solutions, automation systems, IoT, chatbots, and data analytics.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --primary: #1e90ff;
+      --secondary: #00bfff;
+      --accent: #007acc;
+      --dark: #0a2540;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: transparent;
+      color: var(--dark);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    #bg-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-bg {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 18px;
+      padding: 2.2rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e0e7ff;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(30, 144, 255, 0.15);
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      opacity: 0;
+      transition: 0.4s ease;
+    }
+
+    .service-card:hover::before {
+      opacity: 0.08;
+    }
+
+    .emoji-icon {
+      font-size: 2.8rem;
+      margin-bottom: 1.2rem;
+      transition: transform 0.4s ease;
+      display: inline-block;
+    }
+
+    .service-card:hover .emoji-icon {
+      transform: scale(1.15) rotate(6deg);
+    }
+
+    .service-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    nav a {
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: white;
+      transition: width .3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border: none;
+      transition: all 0.4s ease;
+      box-shadow: 0 6px 20px rgba(30,144,255,0.4);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,191,255,0.5);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 3D Background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <div class="content-wrapper">
+
+    <!-- HEADER -->
+    <header class="hero-bg text-white py-8">
+      <nav class="container mx-auto px-4 flex justify-between items-center">
+        <a href="index.html" class="text-2xl font-bold tracking-tight">NovaTech.AI</a>
+        <ul class="flex gap-6 text-sm md:text-base">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html" class="font-semibold underline decoration-sky-300">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="container mx-auto px-4 text-center py-16">
+        <h1 class="text-5xl font-bold mb-4">Our <span class="gradient-text">Services</span></h1>
+        <p class="text-lg opacity-90 max-w-2xl mx-auto">
+          Empowering industries with intelligent automation, data-driven insights, and next-generation AI innovation.
+        </p>
+      </div>
+    </header>
+
+    <!-- SERVICES GRID -->
+    <main class="py-16">
+      <section class="container mx-auto px-4">
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+          <div class="service-card text-center">
+            <div class="emoji-icon">🤖</div>
+            <h2 class="service-title">Artificial Intelligence Solutions</h2>
+            <p class="service-desc">AI-driven automation and intelligent decision-making systems.</p>
+          </div>
+
+          <div class="service-card text-center">
+            <div class="emoji-icon">📈</div> <!-- UPDATED -->
+            <h2 class="service-title">Machine Learning & Data Analytics</h2>
+            <p class="service-desc">Predictive analytics and ML models for smart decision-making.</p>
+          </div>
+
+          <div class="service-card text-center">
+            <div class="emoji-icon">⚙️</div>
+            <h2 class="service-title">Automation Systems</h2>
+            <p class="service-desc">High-efficiency automation for industries and businesses.</p>
+          </div>
+
+          <div class="service-card text-center">
+            <div class="emoji-icon">💬</div>
+            <h2 class="service-title">AI-Powered Chatbots</h2>
+            <p class="service-desc">24/7 intelligent conversational assistants.</p>
+          </div>
+
+          <div class="service-card text-center">
+            <div class="emoji-icon">📡</div>
+            <h2 class="service-title">IoT & Smart Devices</h2>
+            <p class="service-desc">Real-time connected systems for smart automation.</p>
+          </div>
+
+          <div class="service-card text-center">
+            <div class="emoji-icon">🎯</div>
+            <h2 class="service-title">Consulting & Training</h2>
+            <p class="service-desc">Professional guidance and AI upskilling programs.</p>
+          </div>
+
+          <div class="service-card text-center">
+            <div class="emoji-icon">💻</div>
+            <h2 class="service-title">Software Development</h2>
+            <p class="service-desc">Custom, scalable and secure software solutions.</p>
+          </div>
+
+          <div class="service-card text-center">
+            <div class="emoji-icon">📱</div>
+            <h2 class="service-title">App Development</h2>
+            <p class="service-desc">High-performance Android & iOS mobile apps.</p>
+          </div>
+
+          <div class="service-card text-center">
+            <div class="emoji-icon">🌐</div> <!-- UPDATED -->
+            <h2 class="service-title">Website Development</h2>
+            <p class="service-desc">Modern, responsive and visually premium websites.</p>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-14">
+          <a href="contact.html" class="btn-primary">Get a Consultation</a>
+        </div>
+
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="hero-bg text-white py-10 mt-16">
+      <div class="container mx-auto px-4 text-center">
+        <div class="mb-6">
+          <a href="index.html" class="mx-3 hover:underline">Home</a>
+          <a href="about.html" class="mx-3 hover:underline">About</a>
+          <a href="services.html" class="mx-3 hover:underline">Services</a>
+          <a href="projects.html" class="mx-3 hover:underline">Projects</a>
+          <a href="team.html" class="mx-3 hover:underline">Team</a>
+          <a href="contact.html" class="mx-3 hover:underline">Contact</a>
+        </div>
+        <p class="text-sm opacity-80">
+          © 2025 NovaTech.AI. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Three.js Background Animation -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+
+  <script>
+    (() => {
+      const canvas = document.getElementById("bg-canvas");
+      const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(window.devicePixelRatio);
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+      );
+      camera.position.z = 50;
+
+      const particlesCount = 700;
+      const geometry = new THREE.BufferGeometry();
+      const positions = new Float32Array(particlesCount * 3);
+
+      for (let i = 0; i < particlesCount; i++) {
+        positions[i * 3] = (Math.random() - 0.5) * 200;
+        positions[i * 3 + 1] = (Math.random() - 0.5) * 200;
+        positions[i * 3 + 2] = (Math.random() - 0.5) * 200;
+      }
+
+      geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+
+      const material = new THREE.PointsMaterial({
+        color: 0x1e90ff,
+        size: 1.5,
+        transparent: true,
+        opacity: 0.75,
+      });
+
+      const particles = new THREE.Points(geometry, material);
+      scene.add(particles);
+
+      function animate() {
+        requestAnimationFrame(animate);
+        particles.rotation.x += 0.0006;
+        particles.rotation.y += 0.001;
+        renderer.render(scene, camera);
+      }
+
+      animate();
+
+      window.addEventListener("resize", () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      });
+    })();
+  </script>
+
+</body>
+</html>

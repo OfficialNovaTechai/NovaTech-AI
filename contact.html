@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - NovaTech.AI</title>
+
+  <meta name="description" content="Get in touch with NovaTech.AI. Contact us for AI, robotics, and automation solutions." />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lottie -->
+  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #ffffff;
+      color: #0a2540;
+      overflow-x: hidden;
+      margin: 0;
+      min-height: 100vh;
+    }
+
+    input, textarea {
+      border: 1.6px solid #d2d6dc;
+      padding: 0.75rem 1rem;
+      width: 100%;
+      margin-top: 0.5rem;
+      background: #ffffff;
+      transition: 0.25s ease;
+      border-radius: 12px;
+      font-size: 1rem;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #1e90ff;
+      box-shadow: 0 0 8px rgba(30, 144, 255, 0.25);
+      outline: none;
+      background: #f7fbff;
+    }
+
+    button {
+      border-radius: 12px;
+      background: #1e90ff;
+      color: #fff;
+      padding: 0.85rem;
+      width: 100%;
+      transition: 0.3s ease;
+      margin-top: 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #00bfff;
+      box-shadow: 0 6px 18px rgba(0, 191, 255, 0.35);
+    }
+
+    .form-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 1.5rem;
+      box-shadow: 0px 8px 32px rgba(0,0,0,0.08);
+    }
+
+    .map-container {
+      border-radius: 12px;
+      overflow: hidden;
+      height: 300px;
+      width: 100%;
+    }
+
+    #bg-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      z-index: -10;
+      opacity: 0.18;
+      pointer-events: none;
+    }
+
+    /* WhatsApp Button */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      z-index: 999;
+      transition: 0.3s ease;
+    }
+    .whatsapp-btn:hover {
+      transform: scale(1.1);
+    }
+    .whatsapp-btn img {
+      width: 32px;
+      height: 32px;
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 640px) {
+      .form-card { padding: 1.25rem; }
+      .lottie-container { width: 220px !important; height: 220px !important; }
+      .map-container { height: 250px; }
+      .office-info { padding: 1rem !important; }
+      .office-info h2 { font-size: 1.5rem; }
+      .office-info p { font-size: 0.95rem; }
+    }
+
+    @media (min-width: 641px) and (max-width: 768px) {
+      .lottie-container { width: 280px !important; height: 280px !important; }
+      .map-container { height: 320px; }
+    }
+
+    @media (min-width: 769px) {
+      .lottie-container { width: 350px; height: 350px; }
+      .map-container { height: 400px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-blue-900 to-blue-600 text-white py-4 md:py-6 shadow-lg">
+    <nav class="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-3">
+      <a href="index.html" class="text-xl sm:text-2xl font-bold tracking-wide">NovaTech.AI</a>
+      <ul class="flex flex-wrap justify-center gap-3 sm:gap-6 text-sm sm:text-base">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="contact.html" class="font-bold underline underline-offset-4">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="container mx-auto px-4 py-8 md:py-16">
+
+    <section class="text-center mb-8 md:mb-12">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
+        Contact <span class="text-blue-600">NovaTech.AI</span>
+      </h1>
+      <p class="text-base md:text-lg text-gray-700 mt-2">We’ll get back to you within 24 hours.</p>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+
+      <!-- Form -->
+      <div class="form-card">
+        <form action="https://formsubmit.co/official.novatechai@gmail.com" method="POST">
+
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+          <input type="hidden" name="_subject" value="New Message from NovaTech.AI Website">
+          <input type="hidden" name="_autoresponse" value="Thank you for contacting NovaTech.AI. We will reach out shortly.">
+
+          <label class="font-semibold text-gray-700 block">Full Name</label>
+          <input type="text" name="name" placeholder="Your Name" required>
+
+          <label class="font-semibold text-gray-700 mt-4 block">Email</label>
+          <input type="email" name="email" placeholder="you@example.com" required>
+
+          <label class="font-semibold text-gray-700 mt-4 block">Subject</label>
+          <input type="text" name="subject" placeholder="Subject" required>
+
+          <label class="font-semibold text-gray-700 mt-4 block">Message</label>
+          <textarea name="message" rows="5" placeholder="Write your message..." required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+
+      <!-- Lottie -->
+      <div class="flex justify-center">
+        <div class="lottie-container mx-auto">
+          <dotlottie-wc 
+            src="https://lottie.host/82360185-5e9b-4b60-81e3-f0347c51829e/wMS8tGlq5B.lottie"
+            style="width: 100%; height: 100%;"
+            autoplay loop>
+          </dotlottie-wc>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Map & Office Info -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-12 md:mt-16">
+
+      <div class="map-container shadow-lg">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.912345678!2d73.9081234!3d20.0162345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb12345abcdef%3A0x123456789abcdef!2sSandip+Institute+of+Technology+and+Research+Centre!5e0!3m2!1sen!2sin!4v1693698765432!5m2!1sen!2sin"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+
+      <div class="office-info bg-white p-5 md:p-6 rounded-xl shadow-xl flex flex-col justify-center">
+        <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">Our Office</h2>
+        <p class="text-gray-700">
+          Sandip Institute of Technology & Research Centre<br>
+          Nashik, Maharashtra
+        </p>
+        <p class="mt-3 text-gray-700">
+          Email: <a href="mailto:official.novatechai@gmail.com" class="text-blue-600 font-semibold hover:underline">official.novatechai@gmail.com</a>
+        </p>
+        <p class="text-gray-700">
+          Phone: <a href="tel:+918263833040" class="text-blue-600 font-semibold hover:underline">+91 82638 33040</a>
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-blue-900 to-blue-600 text-white py-6 md:py-8 mt-16 md:mt-20">
+    <div class="container mx-auto px-4 text-center text-sm md:text-base">
+      <p>© 2025 NovaTech.AI — All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/918263833040" target="_blank" class="whatsapp-btn" aria-label="Chat on WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+  <!-- Background Animation -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+  <script>
+    (() => {
+      const canvas = document.getElementById("bg-canvas");
+      const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+      
+      const updateSize = () => {
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      };
+      updateSize();
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+      camera.position.z = 150;
+
+      const light = new THREE.PointLight(0x00bfff, 1.2);
+      light.position.set(50, 50, 50);
+      scene.add(light);
+
+      const ambientLight = new THREE.AmbientLight(0x404040, 0.4);
+      scene.add(ambientLight);
+
+      const nodes = [];
+      const geo = new THREE.SphereGeometry(3, 32, 32);
+      const mat = new THREE.MeshStandardMaterial({
+        color: 0x1e90ff,
+        emissive: 0x00bfff,
+        emissiveIntensity: 0.6,
+        metalness: 0.3,
+        roughness: 0.4
+      });
+
+      for (let i = 0; i < 12; i++) {
+        const node = new THREE.Mesh(geo, mat);
+        node.position.set(
+          (Math.random() - 0.5) * 200,
+          (Math.random() - 0.5) * 200,
+          (Math.random() - 0.5) * 200
+        );
+        scene.add(node);
+        nodes.push(node);
+      }
+
+      function animate(t = 0) {
+        t *= 0.001;
+        nodes.forEach(n => {
+          n.position.y += Math.sin(t + n.position.x) * 0.02;
+          n.rotation.x += 0.01;
+          n.rotation.y += 0.01;
+        });
+
+        camera.position.x = Math.sin(t * 0.4) * 160;
+        camera.position.z = Math.cos(t * 0.4) * 160;
+        camera.lookAt(0, 0, 0);
+
+        renderer.render(scene, camera);
+        requestAnimationFrame(animate);
+      }
+      animate();
+
+      window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        updateSize();
+      });
+    })();
+  </script>
+
+</body>
+</html>

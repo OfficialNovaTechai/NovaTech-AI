@@ -12,33 +12,33 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: #FFFFFF; /* Pure White Background */
+      background: #FFFFFF;
       color: #0a2540;
       overflow-x: hidden;
     }
 
     /* BLUE-GLOW GLASS CARD */
     .team-card {
-      background: #0a1a2f; /* Dark blue card */
+      background: #0a1a2f;
       backdrop-filter: blur(15px);
-      border-radius: 20px;
+      border-radius: 24px;
       border: 1px solid rgba(0, 150, 255, 0.28);
-      padding: 2rem 1.6rem;
-      box-shadow: 0 12px 40px rgba(0, 150, 255, 0.20);
+      padding: 2.4rem 2rem;
+      box-shadow: 0 16px 50px rgba(0, 150, 255, 0.25);
       transition: 0.4s ease;
       color: white;
     }
 
     .team-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 18px 45px rgba(0, 150, 255, 0.32);
+      transform: translateY(-10px) scale(1.01);
+      box-shadow: 0 22px 60px rgba(0, 150, 255, 0.38);
       border-color: #00c6ff;
     }
 
     /* Glow Profile Image */
     .profile-img {
-      width: 140px;
-      height: 140px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       margin: 0 auto;
       border: 4px solid #00c6ff;
@@ -67,7 +67,7 @@
       100% { background-position: 200%; }
     }
 
-    /* Scroll Animation */
+    /* Scroll Fade Animation */
     .fade {
       opacity: 0;
       transform: translateY(20px);
@@ -77,6 +77,15 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* Horizontal scroll style */
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
   </style>
 </head>
 
@@ -85,10 +94,10 @@
   <!-- NAVBAR -->
   <header class="bg-gradient-to-r from-blue-900 to-blue-600 text-white py-6 shadow-xl sticky top-0 z-50">
     <nav class="container mx-auto px-6 flex justify-between items-center">
-<a href="index.html" class="flex items-center gap-2">
-  <img src="NovaTechAI2.png" alt="NovaTech.AI Logo" class="h-10 w-auto">
-  <span class="text-xl sm:text-2xl font-bold tracking-wide">NovaTech.AI</span>
-</a>
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="NovaTechAI3.png" alt="NovaTech.AI Logo" class="h-10 w-auto">
+        <span class="text-xl sm:text-2xl font-bold tracking-wide">NovaTech.AI</span>
+      </a>
       <ul class="hidden md:flex gap-8 text-sm">
         <li><a href="index.html" class="hover:text-cyan-300">Home</a></li>
         <li><a href="about.html" class="hover:text-cyan-300">About</a></li>
@@ -100,103 +109,128 @@
     </nav>
   </header>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
   <section class="py-20 text-center px-6">
     <h1 class="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-900 to-cyan-500">
-      Meet the Visionaries
+      Meet the Visionary Behind NovaTech.AI
     </h1>
     <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-      The engineers shaping the future of AI, robotics & intelligent systems.
+      Leading innovation, engineering intelligent systems, and shaping the future of automation.
     </p>
     <div class="divider"></div>
   </section>
 
-  <!-- TEAM GRID -->
+  <!-- TEAM CARD -->
   <section class="pb-24 px-6">
-    <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div class="container mx-auto flex justify-center">
+      <div class="team-card fade max-w-md w-full text-center">
 
-      <!-- Ritesh -->
-      <div class="team-card fade">
-        <img src="https://randomuser.me/api/portraits/men/1.jpg" class="profile-img" />
-        <h2 class="text-xl font-bold mt-4">Ritesh Nilesh Pagare</h2>
-        <p class="text-cyan-300 text-sm font-medium">Founder • CEO • AI Engineer</p>
-        <p class="text-gray-300 text-sm mt-2">
-          AI Systems • Vision Architecture • Automation
+        <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Ritesh Pagare" class="profile-img" />
+
+        <h2 class="text-2xl font-bold mt-5 tracking-wide">Ritesh Nilesh Pagare</h2>
+
+        <p class="text-cyan-300 text-sm font-semibold mt-1 uppercase tracking-widest">
+          Founder • CEO • AI & Robotics Engineer
         </p>
-      </div>
 
-      <!-- Anshika -->
-      <div class="team-card fade">
-        <img src="https://randomuser.me/api/portraits/women/3.jpg" class="profile-img" />
-        <h2 class="text-xl font-bold mt-4">Anshika Shukla</h2>
-        <p class="text-cyan-300 text-sm font-medium">Robotics & Automation Specialist</p>
-        <p class="text-gray-300 text-sm mt-2">
-          Robotics • PLC • Mechatronics Automation
+        <p class="text-gray-300 text-sm mt-4 leading-relaxed">
+          Specializing in AI-driven automation and safety systems. Focused on building
+          scalable future-ready solutions powered by intelligence, automation, and security.
         </p>
-      </div>
 
-      <!-- Vedant -->
-      <div class="team-card fade">
-        <img src="https://randomuser.me/api/portraits/men/4.jpg" class="profile-img" />
-        <h2 class="text-xl font-bold mt-4">Vedant Patil</h2>
-        <p class="text-cyan-300 text-sm font-medium">Full-Stack Developer</p>
-        <p class="text-gray-300 text-sm mt-2">
-          Web Apps • Backend Systems • Integrations
-        </p>
-      </div>
+        <!-- NEW HORIZONTAL TAGS -->
+        <div class="mt-6 overflow-x-auto flex gap-3 text-xs px-1 scrollbar-hide whitespace-nowrap">
+          <span class="px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-400/40">Machine Vision</span>
+          <span class="px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-400/40">Automation Systems</span>
+          <span class="px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-400/40">Product Architecture</span>
+          <span class="px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-400/40">Cybersecurity</span>
+          <span class="px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-400/40">AI Systems</span>
+          <span class="px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-400/40">Prompt Engineering</span>
+          <span class="px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-400/40">Robotics Engineering</span>
+        </div>
 
-      <!-- Karan -->
-      <div class="team-card fade">
-        <img src="https://randomuser.me/api/portraits/men/5.jpg" class="profile-img" />
-        <h2 class="text-xl font-bold mt-4">Karan Lahamge</h2>
-        <p class="text-cyan-300 text-sm font-medium">Embedded Systems & IoT Engineer</p>
-        <p class="text-gray-300 text-sm mt-2">
-          IoT Devices • Microcontrollers • Smart Systems
-        </p>
-      </div>
+        <!-- BUTTONS -->
+        <div class="mt-7 flex flex-wrap justify-center gap-4 text-sm">
+          <a href="https://rittz03.github.io/Ritesh-Portfolio/#projects"
+             class="px-5 py-2 rounded-full border border-cyan-400/70 hover:bg-cyan-500/10 transition"
+             target="_blank">View Portfolio</a>
 
+          <a href="https://www.linkedin.com/in/riteshpagare"
+             class="px-5 py-2 rounded-full bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold transition"
+             target="_blank">Connect on LinkedIn</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- FIXED FOOTER (same as all NovaTech pages) -->
+  <!-- FOOTER -->
   <footer class="bg-gradient-to-r from-blue-900 to-blue-600 text-white py-10 mt-10">
-    <div class="container mx-auto px-6 text-center">
+  <div class="container mx-auto px-6 text-center">
 
-      <div class="mb-6">
-<a href="index.html" class="flex items-center gap-2">
-  <img src="NovaTechAI2.png" alt="NovaTech.AI Logo" class="h-10 w-auto">
-  <span class="text-xl sm:text-2xl font-bold tracking-wide">NovaTech.AI</span>
-</a>
-          <span class="text-white">NovaTech</span><span class="text-cyan-300">.AI</span>
-        </a>
-      </div>
-
-      <nav class="flex flex-wrap justify-center gap-6 mb-6 text-sm">
-        <a href="index.html" class="hover:text-cyan-200">Home</a>
-        <a href="about.html" class="hover:text-cyan-200">About</a>
-        <a href="services.html" class="hover:text-cyan-200">Services</a>
-        <a href="projects.html" class="hover:text-cyan-200">Projects</a>
-        <a href="team.html" class="text-cyan-300 font-semibold">Team</a>
-        <a href="contact.html" class="hover:text-cyan-200">Contact</a>
-      </nav>
-
-      <p class="text-sm text-gray-200 opacity-90">
-        © 2025 NovaTech.AI — Engineering the Future with Intelligence.
-      </p>
+    <!-- Branding -->
+    <div class="mb-6 flex flex-col items-center gap-2">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="NovaTechAI3.png" alt="NovaTech.AI Logo" class="h-10 w-auto">
+        <span class="text-xl sm:text-2xl font-bold tracking-wide">NovaTech.AI</span>
+      </a>
+      <p class="text-sm opacity-80">Innovation • Automation • Intelligence</p>
     </div>
-  </footer>
 
-  <!-- Scroll Animation -->
+    <!-- Navigation -->
+    <nav class="flex flex-wrap justify-center gap-6 mb-6 text-sm">
+      <a href="index.html" class="hover:text-cyan-200 transition">Home</a>
+      <a href="about.html" class="hover:text-cyan-200 transition">About</a>
+      <a href="services.html" class="hover:text-cyan-200 transition">Services</a>
+      <a href="projects.html" class="hover:text-cyan-200 transition">Projects</a>
+      <a href="team.html" class="hover:text-cyan-200 transition">Team</a>
+      <a href="contact.html" class="hover:text-cyan-200 transition">Contact</a>
+    </nav>
+
+    <!-- Social Media -->
+    <div class="flex justify-center gap-6 text-2xl mt-4">
+
+      <a href="https://instagram.com/rittz03" target="_blank"
+         class="hover:text-white hover:scale-125 transition transform">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+
+      <a href="https://facebook.com" target="_blank"
+         class="hover:text-white hover:scale-125 transition transform">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+
+      <a href="https://www.linkedin.com/in/riteshpagare" target="_blank"
+         class="hover:text-white hover:scale-125 transition transform">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+
+      <a href="https://twitter.com" target="_blank"
+         class="hover:text-white hover:scale-125 transition transform">
+        <i class="fa-brands fa-x-twitter"></i>
+      </a>
+
+      <a href="https://github.com/rittz03" target="_blank"
+         class="hover:text-white hover:scale-125 transition transform">
+        <i class="fa-brands fa-github"></i>
+      </a>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <p class="text-sm text-gray-200 opacity-90 mt-6">
+      © 2025 NovaTech.AI — Engineered with Innovation, Automation & Intelligence.
+    </p>
+  </div>
+</footer>
+
+
   <script>
     const cards = document.querySelectorAll('.fade');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.2 });
-
     cards.forEach(card => observer.observe(card));
   </script>
 

@@ -7,33 +7,41 @@ import dynamic from "next/dynamic"
 
 const HeroScene = dynamic(
   () => import("./hero-scene").then((mod) => mod.HeroScene),
-  { ssr: false }
+  {
+    ssr: false,
+  }
 )
 
 export function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center overflow-hidden"
+    >
       {/* 3D Background */}
-      <HeroScene />
-      
+      <div className="absolute inset-0 z-0">
+        <HeroScene />
+      </div>
+
       {/* Grid overlay */}
       <div className="absolute inset-0 grid-bg opacity-30 z-0" />
-      
+
       {/* Gradient overlays */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background z-10" />
+
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
-      
+
       {/* Content */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 lg:py-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[80vh]">
           {/* Left side - Text content */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full text-sm font-medium text-primary neon-border"
+              className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full text-xs sm:text-sm font-medium text-primary neon-border mx-auto lg:mx-0"
             >
               <Sparkles className="w-4 h-4" />
               <span>Next-Gen AI Solutions</span>
@@ -44,14 +52,23 @@ export function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight"
+              className="font-bold leading-tight tracking-tight"
             >
-              <span className="text-foreground">Building the</span>
-              <br />
-              <span className="gradient-text">Future</span>
-              <span className="text-foreground"> with</span>
-              <br />
-              <span className="gradient-text">AI & Automation</span>
+              <span className="block text-4xl sm:text-5xl md:text-6xl xl:text-7xl text-foreground">
+                Building the
+              </span>
+
+              <span className="block text-4xl sm:text-5xl md:text-6xl xl:text-7xl gradient-text">
+                Future
+              </span>
+
+              <span className="block text-4xl sm:text-5xl md:text-6xl xl:text-7xl text-foreground">
+                with
+              </span>
+
+              <span className="block text-4xl sm:text-5xl md:text-6xl xl:text-7xl gradient-text">
+                AI & Automation
+              </span>
             </motion.h1>
 
             {/* Subtitle */}
@@ -59,10 +76,11 @@ export function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-lg sm:text-xl text-muted-foreground max-w-xl leading-relaxed"
+              className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed mx-auto lg:mx-0"
             >
-              We create cutting-edge AI systems, robotics solutions, and automation 
-              platforms that transform industries and push the boundaries of what&apos;s possible.
+              We create cutting-edge AI systems, robotics solutions,
+              and automation platforms that transform industries and
+              push the boundaries of what&apos;s possible.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -70,22 +88,27 @@ export function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
               <Link
                 href="#projects"
-                className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold text-primary-foreground bg-gradient-to-r from-primary to-secondary rounded-full overflow-hidden transition-all hover:scale-105 hover-lift"
+                className="group relative inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-4 text-base sm:text-lg font-semibold text-primary-foreground bg-gradient-to-r from-primary to-secondary rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover-lift"
               >
-                <span className="relative z-10">Explore NovaTech</span>
+                <span className="relative z-10">
+                  Explore NovaTech
+                </span>
+
                 <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+
                 <div className="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
-              
+
               <Link
                 href="#projects"
-                className="group inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold text-foreground glass rounded-full neon-border transition-all hover:scale-105"
+                className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-4 text-base sm:text-lg font-semibold text-foreground glass rounded-full neon-border transition-all duration-300 hover:scale-105"
               >
                 <span>View Projects</span>
+
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
@@ -95,24 +118,31 @@ export function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="flex flex-wrap gap-8 pt-8 border-t border-border/50"
+              className="flex flex-wrap justify-center lg:justify-start gap-6 sm:gap-8 pt-8 border-t border-border/50"
             >
               {[
                 { value: "50+", label: "Projects" },
                 { value: "99%", label: "Success Rate" },
                 { value: "24/7", label: "AI Support" },
               ].map((stat, i) => (
-                <div key={i} className="space-y-1">
-                  <div className="text-2xl sm:text-3xl font-bold gradient-text">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div
+                  key={i}
+                  className="space-y-1 text-center lg:text-left"
+                >
+                  <div className="text-2xl sm:text-3xl font-bold gradient-text">
+                    {stat.value}
+                  </div>
+
+                  <div className="text-sm text-muted-foreground">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </motion.div>
           </div>
 
-          {/* Right side - Visual space for 3D scene */}
-          <div className="hidden lg:block relative h-[500px]">
-            {/* This space is intentionally left for the 3D scene to be visible */}
+          {/* Right side - Visual space */}
+          <div className="hidden lg:block relative min-h-[500px]">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -121,7 +151,14 @@ export function Hero() {
             >
               {/* Decorative circles */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full border border-primary/20 animate-spin-slow" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full border border-secondary/10 animate-spin-slow" style={{ animationDirection: 'reverse', animationDuration: '30s' }} />
+
+              <div
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full border border-secondary/10 animate-spin-slow"
+                style={{
+                  animationDirection: "reverse",
+                  animationDuration: "30s",
+                }}
+              />
             </motion.div>
           </div>
         </div>
@@ -132,10 +169,13 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
+        className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-20"
       >
         <div className="flex flex-col items-center gap-2">
-          <span className="text-xs text-muted-foreground uppercase tracking-widest">Scroll to explore</span>
+          <span className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-[0.3em] text-center">
+            Scroll to explore
+          </span>
+
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}

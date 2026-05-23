@@ -305,7 +305,7 @@ export function Services() {
           className="text-center mt-14 sm:mt-16"
         >
           <p className="text-sm sm:text-base text-muted-foreground mb-6">
-            Need a custom solution? We&apos;ve got you
+            Need a custom solution? We got you
             covered.
           </p>
 

@@ -12,30 +12,31 @@ import {
   Linkedin,
   Twitter,
   Instagram,
+  MessageCircle,
 } from "lucide-react"
 
 const socialLinks = [
   { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/novatech-ai-innovations/", label: "LinkedIn" },
   { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Instagram, href: "https://www.instagram.com/novatechai.in?igsh=MWF1YXgzcXljbTRkaQ==", label: "Instagram" },
 ]
 
 const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "hello@novatech.ai",
+    value: "official.novatechai@gmail.com",
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+1 (555) 123-4567",
+    value: "+91 82638 33040",
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "San Francisco, CA",
+    value: "Maharashtra India",
   },
 ]
 
@@ -117,7 +118,7 @@ export function Contact() {
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
             <span className="text-foreground">
-              Let&apos;s Build
+              Let's Build
             </span>
 
             <br />
@@ -332,6 +333,20 @@ export function Contact() {
           </motion.div>
         </div>
       </div>
+
+      {/* Floating WhatsApp Button - Improved Positioning */}
+      <a
+        href="https://wa.me/918551063040"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-8 right-6 z-[100] bg-[#25D366] hover:bg-[#20ba5c] text-white p-4 rounded-full shadow-2xl hover-lift transition-all flex items-center justify-center group"
+        aria-label="Chat on WhatsApp"
+      >
+        <MessageCircle className="w-7 h-7" />
+        <span className="absolute -top-1 -right-1 bg-green-500 text-[10px] font-bold px-1.5 py-0.5 rounded-full animate-pulse">
+          Chat
+        </span>
+      </a>
     </section>
   )
 }
